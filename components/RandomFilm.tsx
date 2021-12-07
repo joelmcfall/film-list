@@ -3,7 +3,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import { getDiscover, getGenres } from '../api/api';
 import { textStyles } from '../styles/TextStyles';
 import { lookup } from './GenrePicker/GenreLookUp';
-import { GenreData } from './GenrePicker/GenreContext';
 
 type RandomFilm = {
     title: string,
@@ -47,7 +46,9 @@ export const RandomFilm = () => {
                 <Text style={styles.discoverText}>{movie.overview}</Text>
                 <View style={styles.genreContainer}>
                     {genres.map((genre) => (
-                        <Text style={styles.genreText}>{genre}</Text>
+                        <View style={styles.genreView}>
+                            <Text style={styles.genreText}>{genre}</Text>
+                        </View>
                     ))}
                 </View>
             </View>
@@ -68,11 +69,17 @@ const styles = StyleSheet.create({
     },
     genreContainer: {
         flexDirection: "row",
+        marginTop: 10,
+    },
+    genreView: {
+        backgroundColor: "#A7A7A7",
+        marginRight: 5,
+        paddingHorizontal: 5,
+        paddingVertical: 2,
+        borderRadius: 50,
     },
     genreText: {
         alignSelf: "center",
-        backgroundColor: "#A7A7A7",
-        marginRight: 5,
     },
     discoverText: {
         

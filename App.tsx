@@ -8,14 +8,14 @@ import { GenrePicker } from './components/GenrePicker/GenrePicker';
 import { Watchlist } from './components/Watchlist/Watchlist';
 
 const App = () => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <Header/>
-      <RandomFilm />
-      <GenrePicker />
-      <Watchlist />
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView style={{flex: 1}}>
+      		<Header/>
+			<RandomFilm />
+			<GenrePicker />
+			<Watchlist />
+    	</SafeAreaView>
+  	);
 };
 
 const styles = StyleSheet.create({
