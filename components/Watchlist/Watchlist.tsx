@@ -14,118 +14,6 @@ const WATCHLIST: Watchlist[] = [
         title: 'Guardians of the Galaxy',
         description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
     },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Peaky Blinders',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Kill Bill v.1',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
-    {
-        title: 'Se7en',
-        description: 'hdeiwo fiew foewi fow dnewodiejwi doeiw dowi',
-    },
 ]
 
 interface WatchlistProps {
@@ -136,7 +24,7 @@ export const Watchlist = () => {
     return ( 
         <View style={styles.watchlistContainer}>
             <Text style={styles.header}>Watchlist</Text>
-            <ScrollView >
+            <ScrollView>
                 {WATCHLIST.map((item) => {
                     return <WatchlistItem item={item} />
                 })}

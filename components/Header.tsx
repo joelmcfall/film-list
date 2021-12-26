@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Text, TextInput, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Text, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { getSearch } from '../api/api';
+import { MovieCard } from './MovieCard';
  
 export const Header = () => {
-    const [newTodo, setNewTodo] = useState<string>();
+    const [movieSearch, setMovieSearch] = useState<string>("");
+    const [movieList, setMovieList] = useState<any[]>([]);
+
+    useEffect(() => {
+        getSearch(movieSearch)
+            .then(({ results }) => {
+                setMovieList(results)
+            });
+    }, [movieSearch])
     
     return (
         <>
@@ -10,17 +20,23 @@ export const Header = () => {
                 <TextInput 
                     style={styles.search}
                     placeholder={"search"}
-                    value={newTodo}
-                    onChangeText={(text) => setNewTodo(text)}
+                    value={movieSearch}
+                    onChangeText={(text) => setMovieSearch(text)}
                 />
                 <View style={styles.button}>
                     <Text>X</Text>
                 </View>
             </View>
-            {newTodo !== "" && 
-                <View style={styles.searchView}>
-                    <Text>Movies here</Text>
-                </View>
+            {movieSearch !== "" && 
+                <ScrollView style={styles.searchView}>
+                    {movieList.map((movie) => {
+                        return (
+                            <View>
+                                <MovieCard movie={movie}/>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
             }
         </>
     );
@@ -40,8 +56,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
     },
     searchView: {
+        marginTop: 10,
         width: "100%",
-        height: "120%",
+        height: "100%",
         zIndex: 3, 
         elevation: 3, 
         backgroundColor: "white",
