@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { GenreData } from "../components/GenrePicker/GenreContext";
+import { GenreData } from "../components/GenrePicker/GenrePicker";
 
 const URL = "https://api.themoviedb.org/3/";
 
@@ -28,12 +28,6 @@ export async function getSearch(searchTerm: string) {
     return fetch(`${URL}search/movie?api_key=${config.key}&language=en-US&query="${searchTerm}"&page=1`)
         .then((response) => response.json())
         .then((data) => {
-            console.log('data: ', data.results[0]);
             return data;
         })
 }
-
-
-//     "https://api.themoviedb.org/3/search/movie?api_key=29408d281b8290ab79293fd3f9c29a82&language=en-US&query=" +
-//       searchTerm +
-//       "&page=1&include_adult=false"

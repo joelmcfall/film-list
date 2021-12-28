@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Button, TouchableOpacity } from 'react-native';
 
 interface Movie {
     overview: string,
@@ -12,10 +12,8 @@ interface MovieCardProps {
 }
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
-    console.log(movie.poster_path);
-
     return ( 
-        <View style={styles.container}>
+        <View style={styles.help}>
             <Image
                 style={styles.image}
                 source={{uri: `https://image.tmdb.org/t/p/w200/${movie.poster_path}`}}
@@ -23,29 +21,30 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
             <View style={styles.descriptionContainer}>
                 <Text style={styles.title}>{movie.original_title}</Text>
-                <Text style={styles.description}>{movie.overview}</Text>
+                <Text numberOfLines={3} style={styles.description}>{movie.overview}</Text>
+                <TouchableOpacity>
+                    <Text>{"+Watch"}</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    help: {
         flexDirection: "row",
-        marginHorizontal: 10,
+        paddingVertical: 5,
+        backgroundColor: "#C3C3C3",
+        width: "95%",
         marginBottom: 10,
-        paddingVertical: 10,
-        paddingLeft: 10,
-        width: "100%",
-        height: 125,
-        borderRadius: 10,
-        backgroundColor: "#C4C4C4",
+        alignSelf: "center",
     },
     descriptionContainer: {
         fontSize: 14,
         fontWeight: "bold",
-        paddingLeft: 10,
-        paddingRight: 90,
+        paddingLeft: 5,
+        width: "100%",
+        flex: 1,
     },
     title: {
         fontWeight: "bold",
@@ -57,6 +56,7 @@ const styles = StyleSheet.create({
     image: {
         borderRadius: 10,
         width: "20%",
+        height: 100,
         resizeMode: "contain",
     }
 })

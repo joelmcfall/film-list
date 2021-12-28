@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-import { GenreData } from './GenreContext';
 
 //Components
 import { GenreCard } from './GenreCard';
 import { getGenres } from '../../api/api';
+
+export type GenreData = {
+    id: number,
+    name: string,
+}
 
 export const GenrePicker = () => {
     const [allGenres, setAllGenres] = useState<GenreData[]>([]);

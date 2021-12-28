@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, TextInput, SafeAreaView, ScrollView, Image } from 'react-native';
 import { getSearch } from '../api/api';
 import { MovieCard } from './MovieCard';
  
@@ -31,9 +31,7 @@ export const Header = () => {
                 <ScrollView style={styles.searchView}>
                     {movieList.map((movie) => {
                         return (
-                            <View>
-                                <MovieCard movie={movie}/>
-                            </View>
+                            <MovieCard movie={movie}/>
                         )
                     })}
                 </ScrollView>
@@ -66,6 +64,11 @@ const styles = StyleSheet.create({
     button: {
         marginHorizontal: 5,
         justifyContent: "center",
+    },
+    image: {
+        borderRadius: 10,
+        width: "100%",
+        resizeMode: "contain",
     }
 })
  
